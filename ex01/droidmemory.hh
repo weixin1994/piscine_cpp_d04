@@ -1,4 +1,3 @@
-
 #ifndef _DROIDMEMORY_H_
 #define _DROIDMEMORY_H_
 
@@ -9,12 +8,10 @@ class DroidMemory
 	public:
 		DroidMemory();
 		virtual ~DroidMemory();
-
 		size_t getFingerPrint() const;
 		void setFingerPrint(size_t const value);
 		size_t getExp() const;
 		void setExp(size_t const value);
-
 		DroidMemory& operator<<(DroidMemory const& other);
 		DroidMemory& operator>>(DroidMemory& other) const;
 		DroidMemory& operator+=(DroidMemory const& other);
