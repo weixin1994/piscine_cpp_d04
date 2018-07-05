@@ -7,36 +7,37 @@ class DroidMemory
 {
 	public:
 		DroidMemory();
-		virtual ~DroidMemory();
-
+		~DroidMemory();
 		size_t getFingerPrint() const;
-		void setFingerPrint(size_t const value);
+		void setFingerPrint(size_t);
 		size_t getExp() const;
-		void setExp(size_t const value);
+		void setExp(size_t);
 
-		DroidMemory& operator<<(DroidMemory const& other);
-		DroidMemory& operator>>(DroidMemory& other) const;
-		DroidMemory& operator+=(DroidMemory const& other);
-		DroidMemory& operator+=(size_t const& val);
-		DroidMemory operator+(DroidMemory const& other) const;
-		DroidMemory operator+(size_t const val) const;
-		bool operator==(DroidMemory const& other) const;
-		bool operator!=(DroidMemory const& other) const;
-		bool operator<(DroidMemory const& other) const;
-		bool operator<(size_t other) const;
-		bool operator>(DroidMemory const& other) const;
-		bool operator>(size_t other) const;
-		bool operator<=(DroidMemory const& other) const;
-		bool operator<=(size_t other) const;
-		bool operator>=(DroidMemory const& other) const;
-		bool operator>=(size_t other) const;
+		static void addXor(DroidMemory &dest, DroidMemory const &memory1,
+			DroidMemory const &memory2);
 
+		DroidMemory &operator<<(DroidMemory const &memory);
+		DroidMemory const  &operator>>(DroidMemory &memory) const;
+		DroidMemory &operator+=(DroidMemory const &memory);
+		DroidMemory &operator+=(size_t);
+		DroidMemory &operator+(DroidMemory const &memory);
+		DroidMemory &operator+(size_t) const;
+		bool operator==(DroidMemory const &memory) const;
+		bool operator!=(DroidMemory const &memory) const;
+		bool operator>(DroidMemory const &memory) const;
+		bool operator<(DroidMemory const &memory) const;
+		bool operator>=(DroidMemory const &memory) const;
+		bool operator<=(DroidMemory const &memory) const;
+		bool operator>(const size_t) const;
+		bool operator<(const size_t) const;
+		bool operator>=(const size_t) const;
+		bool operator<=(const size_t) const;
 	private:
-		size_t _fingerPrint;
-		size_t _exp;
+		size_t _FingerPrint;
+		size_t _Exp;
 };
 
-std::ostream& operator<<(std::ostream& stream, DroidMemory const& memory);
+std::ostream &operator<<(std::ostream &s, const DroidMemory &droid);
 
 
-#endif /* !DROIDMEMORY_H_ */
+#endif
