@@ -9,7 +9,7 @@ Droid::Droid(std::string const& id) : _id(id), _energy(50), _attack(25),
     std::cout << "Droid '" << _id << "' Activated" << std::endl;
 }
 
-Droid::Droid(Droid const& other) : _id(other._id), _energy(50),
+Droid::Droid(Droid &other) : _id(other._id), _energy(50),
     _attack(other._attack), _thoughness(other._thoughness), _status(NULL),
     _battleData(NULL)
 {

@@ -8,8 +8,8 @@
 class Droid
 {
 public:
-    explicit Droid(std::string const& id);
-    explicit Droid(Droid const& other);
+    explicit Droid(std::string const &id);
+    explicit Droid(Droid &other);
     virtual ~Droid();
     Droid& operator=(Droid const& other);
     bool operator==(Droid const& other) const;
